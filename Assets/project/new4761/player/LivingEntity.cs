@@ -6,6 +6,9 @@ public class LivingEntity : NetworkBehaviour, IDamageable
 
     public float startingHealth;
     public bool canDestory;
+
+
+    [SyncVar]
     protected float health;
     protected bool dead;
 
@@ -28,13 +31,26 @@ public class LivingEntity : NetworkBehaviour, IDamageable
         }
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
         dead = true;
         if (OnDeath != null)
         {
             OnDeath();
         }
-        GameObject.Destroy(gameObject);
+        DestroySelf();
+    }
+    [Server]
+    void DestroySelf()
+    {
+        NetworkServer.Destroy(gameObject);
+    }
+
+    // ServerCallback because we don't want a warning if OnTriggerEnter is
+    // called on the client
+    [ServerCallback]
+    void OnTriggerEnter(Collider co)
+    {
+        NetworkServer.Destroy(gameObject);
     }
 }

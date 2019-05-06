@@ -29,7 +29,7 @@ public class playertank : LivingEntity
     //private int curtDM ;
     //private int curtSpeed ;
     private bool curtSheild ;
-    private bool isDEAD;
+    private bool isDEAD;    
 
   
     void Awake()
@@ -42,6 +42,7 @@ public class playertank : LivingEntity
     }
     void Update()
     {
+        
         m_TextComponent.text = playerName;
         if (!isLocalPlayer) return;
 

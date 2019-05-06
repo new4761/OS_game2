@@ -518,8 +518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 0eb5f04b45c24db42b9bf8e41ec3920b
-  m_SceneId: 0
+  m_AssetId: 
+  m_SceneId: 4255964025
 --- !u!114 &-8193925875311066495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,8 +547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
-  startingHealth: 0
-  canDestory: 0
+  startingHealth: 6
+  canDestory: 1
   agent: {fileID: -4449789456094524036}
   movespeed: 10
   shootKey: 32

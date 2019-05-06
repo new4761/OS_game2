@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Mapcreate : MonoBehaviour
+using Mirror;
+public class Mapcreate : NetworkBehaviour
 {
     public Transform titlePrefab;
     public Transform wallPrefab;
@@ -16,15 +16,22 @@ public class Mapcreate : MonoBehaviour
     [Range(0, 1)]
     public float outline;
 
-
+    [SyncVar]
+    Vector3 tilepostion;
 
     private bool isitem;
     private int coutitem;
     private int lastx = 0, lasty = 0;
-    private void Start()
+    public override void OnStartServer()
     {
-        GenMap();   
+        base.OnStartServer();
+        GenMap();
     }
+    //private void Start()
+    //{
+    //    GenMap();   
+    //}
+  
     public void GenMap()
     {
       
@@ -71,7 +78,7 @@ public class Mapcreate : MonoBehaviour
             for (int y = 0; y < mapsize.y; y++)
             {
 
-                Vector3 tilepostion = new Vector3(-mapsize.x / 2 + 0.5f + x, 0, -mapsize.y / 2 + 0.5f + y);
+                tilepostion = new Vector3(-mapsize.x / 2 + 0.5f + x, 0, -mapsize.y / 2 + 0.5f + y);
                 if (((x == 0 || y == 0) || (x == mapsize.x - 1 || y == mapsize.y - 1)) || ((x > 0 && y > 0) && (x % 2 == 0 && y % 2 == 0)))
                 {
                     Transform newWalltile = Instantiate(wallPrefab, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;

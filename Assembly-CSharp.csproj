@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\itemscript.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkAnimator.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkLobbyManager.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkLobbyPlayer.cs" />
@@ -91,6 +92,8 @@
     <Compile Include="Assets\project\new4761\mapbuild\prefeb\dropitem.cs" />
     <Compile Include="Assets\project\new4761\mapbuild\prefeb\easy_obj.cs" />
     <Compile Include="Assets\project\new4761\mapbuild\prefeb\hard_obj.cs" />
+    <Compile Include="Assets\project\new4761\mapbuild\prefeb\NewBehaviourScript.cs" />
+    <Compile Include="Assets\project\new4761\mapbuild\prefeb\upspeed.cs" />
     <Compile Include="Assets\project\new4761\Mapcreate.cs" />
     <Compile Include="Assets\project\new4761\Mynetworkmanger.cs" />
     <Compile Include="Assets\project\new4761\player\IDamageable.cs" />

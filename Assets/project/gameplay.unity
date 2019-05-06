@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f45a50782ddf354ca9cb63660d5ebfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncInterval: 0.1
   titlePrefab: {fileID: 1180654771000183913, guid: ab51260d5354ea542abf4be1681bd5e1,
     type: 3}
   wallPrefab: {fileID: 6881173856269303015, guid: 0b0e19e1f77639549a97d6903d0f5f84,
@@ -413,7 +414,7 @@ GameObject:
   - component: {fileID: 482808205}
   - component: {fileID: 482808204}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: join
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,8 +1170,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1477819117}
-  - component: {fileID: 1477819116}
   - component: {fileID: 1477819115}
+  - component: {fileID: 1477819116}
   - component: {fileID: 1477819114}
   m_Layer: 0
   m_Name: networkmanger
@@ -1273,10 +1274,18 @@ MonoBehaviour:
   playerPrefab: {fileID: 7239628229646111086, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
     type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 1
+  playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 5036013614225632225, guid: a22199509364c4a4b959aff454da1ffa, type: 3}
-  - {fileID: 7239628229646111086, guid: 0eb5f04b45c24db42b9bf8e41ec3920b, type: 3}
+  - {fileID: 5890560936853567077, guid: b7dd46dbf38c643f09e206f9fa4be008, type: 3}
+  - {fileID: 8864043424747442765, guid: 33806b2e3a5e2dd44b266cc1b911dbe0, type: 3}
+  - {fileID: 8864043424747442765, guid: 33806b2e3a5e2dd44b266cc1b911dbe0, type: 3}
+  - {fileID: 114821708647631684, guid: e4444474babeeba42b1deb538ee4061a, type: 3}
+  - {fileID: 6786589050196973375, guid: 178dfd887b42e98428419a98c83a7e79, type: 3}
+  - {fileID: 660366092838251936, guid: 1c7a2f6616699d948b76937eb1d259bd, type: 3}
+  - {fileID: 4092004778385338695, guid: 76e29fabdcd4bf443941fde2c8a89ddc, type: 3}
+  - {fileID: 2232383221226150356, guid: ab51260d5354ea542abf4be1681bd5e1, type: 3}
+  - {fileID: 5494352454269103680, guid: 0b0e19e1f77639549a97d6903d0f5f84, type: 3}
 --- !u!4 &1477819117
 Transform:
   m_ObjectHideFlags: 0
@@ -1448,7 +1457,7 @@ GameObject:
   - component: {fileID: 1911436583}
   - component: {fileID: 1911436582}
   m_Layer: 5
-  m_Name: Button
+  m_Name: host
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

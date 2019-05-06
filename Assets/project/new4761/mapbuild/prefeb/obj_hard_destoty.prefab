@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4976320340770369856}
   - component: {fileID: 9155604041970911020}
   - component: {fileID: -4187390620868623520}
+  - component: {fileID: 1046357708318222221}
   m_Layer: 0
   m_Name: obj_hard_destoty
   m_TagString: Untagged
@@ -107,3 +108,19 @@ MonoBehaviour:
   syncInterval: 0.1
   startingHealth: 8
   canDestory: 1
+--- !u!114 &1046357708318222221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092004778385338695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverOnly: 1
+  localPlayerAuthority: 0
+  m_AssetId: 
+  m_SceneId: 2425265878

@@ -88,9 +88,8 @@ GameObject:
   - component: {fileID: 976415969402361352}
   - component: {fileID: -3751346853558683429}
   - component: {fileID: 6858646889461576896}
-  - component: {fileID: -258313585075580452}
   - component: {fileID: 8130847123659114099}
-  - component: {fileID: 2284633360946881242}
+  - component: {fileID: 6510654864750372391}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -141,11 +140,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 1
+  serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 2194078127
---- !u!114 &-258313585075580452
+  m_SceneId: 681226266
+--- !u!136 &8130847123659114099
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036013614225632225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.15
+  m_Height: 0.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6510654864750372391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,35 +174,4 @@ MonoBehaviour:
   destroyAfter: 5
   rigidBody: {fileID: -3751346853558683429}
   force: 1000
-  Dm: 1
---- !u!136 &8130847123659114099
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5036013614225632225}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.15
-  m_Height: 0.2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2284633360946881242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5036013614225632225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b82064a769e7303498baef8ddeb5e2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0.1
-  destroyAfter: 5
-  rigidBody: {fileID: -3751346853558683429}
-  force: 10
   Dm: 1
