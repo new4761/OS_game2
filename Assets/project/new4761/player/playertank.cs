@@ -18,9 +18,11 @@ public class playertank : LivingEntity
 
     [Header("PlayerStart")]
     Camera viewCamera;
+    public TextMesh m_TextComponent;
 
-  //  public int startHP;
-    //public string playerName;
+    //  public int startHP;
+    [SyncVar]
+    public string playerName;
     //public int playerSlot;
 
     //private int curtHP ;
@@ -29,16 +31,18 @@ public class playertank : LivingEntity
     private bool curtSheild ;
     private bool isDEAD;
 
-   //  void Start()
-   //wa {
-      //  curtHP = startingHealth;
-    // curtDM = startDM;
-   //  curtSpeed = movespeed;
-    // curtSheild = false;
-   //     isDEAD = false;
-  //  }
+  
+    void Awake()
+    {
+    
+        string playerName = "testplayer";
+    
+        CmdGiveName(name);
+
+    }
     void Update()
     {
+        m_TextComponent.text = playerName;
         if (!isLocalPlayer) return;
 
         //Vector3 diretion;
@@ -75,6 +79,11 @@ public class playertank : LivingEntity
     void RpcOnFire()
     {
        // animator.SetTrigger("Shoot");
+    }
+    [Command]
+    public void CmdGiveName(string s)
+    {
+        playerName = s;
     }
 }
 

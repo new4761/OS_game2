@@ -5,6 +5,7 @@ public class LivingEntity : NetworkBehaviour, IDamageable
 {
 
     public float startingHealth;
+    public bool canDestory;
     protected float health;
     protected bool dead;
 
@@ -17,11 +18,13 @@ public class LivingEntity : NetworkBehaviour, IDamageable
 
     public void TakeHit(float damage, Collision hit)
     {
-        health -= damage;
+        if (canDestory==true) {
+            health -= damage;
 
-        if (health <= 0 && !dead)
-        {
-            Die();
+            if (health <= 0 && !dead)
+            {
+                Die();
+            }
         }
     }
 
