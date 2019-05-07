@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-6772886796938903610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 708283033006248971}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6233724255704228769}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6233724255704228769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6869942734115485610, guid: dda5d81035a94824c89ff046c556ebcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 708283033006248971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -6772886796938903610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1959502546988459111}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &817987723297057881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 708283033006248971}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1959502546988459111}
+  m_Layer: 0
+  m_Name: Sphere (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1959502546988459111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 708283033006248971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817987723297057881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6233724255704228769}
+  m_Father: {fileID: 6571092725930818218}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6786589050196973375
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +93,7 @@ Transform:
   m_LocalPosition: {x: -3.08, y: 0, z: -2.809}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6233724255704228769}
+  - {fileID: 1959502546988459111}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -110,6 +172,7 @@ MonoBehaviour:
   canDestory: 1
   item1: {fileID: 114821708647631684, guid: e4444474babeeba42b1deb538ee4061a, type: 3}
   item2: {fileID: 8864043424747442765, guid: 33806b2e3a5e2dd44b266cc1b911dbe0, type: 3}
+  item3: {fileID: 4559293518730729311, guid: 5fa894aba3162034ca21318c68e50001, type: 3}
 --- !u!1001 &708283033006248971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,11 +180,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6571092725930818218}
     m_Modifications:
-    - target: {fileID: 6326785007052799422, guid: dda5d81035a94824c89ff046c556ebcd,
-        type: 3}
-      propertyPath: m_Name
-      value: Sphere
-      objectReference: {fileID: 0}
     - target: {fileID: 6869942734115485610, guid: dda5d81035a94824c89ff046c556ebcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,11 +235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6326785007052799422, guid: dda5d81035a94824c89ff046c556ebcd,
+        type: 3}
+      propertyPath: m_Name
+      value: Sphere
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dda5d81035a94824c89ff046c556ebcd, type: 3}
---- !u!4 &6233724255704228769 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6869942734115485610, guid: dda5d81035a94824c89ff046c556ebcd,
-    type: 3}
-  m_PrefabInstance: {fileID: 708283033006248971}
-  m_PrefabAsset: {fileID: 0}

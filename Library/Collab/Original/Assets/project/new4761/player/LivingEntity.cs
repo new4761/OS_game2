@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
+using System.Collections;
 using Mirror;
 public class LivingEntity : NetworkBehaviour, IDamageable
 {
 
     public float startingHealth;
     public bool canDestory;
+
+
+    [SyncVar]
     protected float health;
     protected bool dead;
 
-   public event System.Action OnDeath;
+    public event System.Action OnDeath;
 
     protected virtual void Start()
     {
@@ -34,8 +38,19 @@ public class LivingEntity : NetworkBehaviour, IDamageable
         {
             OnDeath();
         }
-        GameObject.Destroy(gameObject);
-     
+        DestroySelf();
     }
-  
+    [Server]
+    void DestroySelf()
+    {
+        NetworkServer.Destroy(gameObject);
+    }
+
+    // ServerCallback because we don't want a warning if OnTriggerEnter is
+    // called on the client
+    [ServerCallback]
+    void OnTriggerEnter(Collider co)
+    {
+        NetworkServer.Destroy(gameObject);
+    }
 }

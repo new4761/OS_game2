@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 382364040127423445}
   - component: {fileID: 1617212648585661878}
   - component: {fileID: 1404922867064496982}
-  - component: {fileID: -5153545707062773036}
+  - component: {fileID: -3869867231128859891}
   m_Layer: 0
   m_Name: tile
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &-5153545707062773036
+--- !u!114 &-3869867231128859891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 1
+  serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 3974454665
+  m_SceneId: 3393861368

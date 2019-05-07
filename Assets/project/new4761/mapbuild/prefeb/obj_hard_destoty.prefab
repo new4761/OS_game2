@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4976320340770369856}
   - component: {fileID: 9155604041970911020}
   - component: {fileID: -4187390620868623520}
-  - component: {fileID: 1046357708318222221}
+  - component: {fileID: 211566508707065609}
+  - component: {fileID: 8035793548480439790}
   m_Layer: 0
   m_Name: obj_hard_destoty
   m_TagString: Untagged
@@ -88,7 +89,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4092004778385338695}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -108,7 +109,7 @@ MonoBehaviour:
   syncInterval: 0.1
   startingHealth: 8
   canDestory: 1
---- !u!114 &1046357708318222221
+--- !u!114 &211566508707065609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +121,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 1
+  serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 2425265878
+  m_SceneId: 721660981
+--- !u!208 &8035793548480439790
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092004778385338695}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

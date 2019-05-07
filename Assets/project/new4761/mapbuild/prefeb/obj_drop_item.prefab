@@ -74,8 +74,9 @@ GameObject:
   - component: {fileID: 5418587384014681330}
   - component: {fileID: 164427514116019258}
   - component: {fileID: 3226737234157150501}
-  - component: {fileID: 1747241143511002306}
-  - component: {fileID: 1941596109828900948}
+  - component: {fileID: -6893431357424357641}
+  - component: {fileID: 8830018924429897746}
+  - component: {fileID: 4823780208132625146}
   m_Layer: 0
   m_Name: obj_drop_item
   m_TagString: Untagged
@@ -151,28 +152,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786589050196973375}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1747241143511002306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786589050196973375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 1
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 1353935586
---- !u!114 &1941596109828900948
+--- !u!114 &-6893431357424357641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,10 +170,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
-  startingHealth: 6
+  startingHealth: 2
   canDestory: 1
   item1: {fileID: 114821708647631684, guid: e4444474babeeba42b1deb538ee4061a, type: 3}
   item2: {fileID: 8864043424747442765, guid: 33806b2e3a5e2dd44b266cc1b911dbe0, type: 3}
+  item3: {fileID: 4559293518730729311, guid: 5fa894aba3162034ca21318c68e50001, type: 3}
+--- !u!114 &8830018924429897746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786589050196973375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverOnly: 0
+  localPlayerAuthority: 0
+  m_AssetId: 
+  m_SceneId: 1068546374
+--- !u!208 &4823780208132625146
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786589050196973375}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &708283033006248971
 PrefabInstance:
   m_ObjectHideFlags: 0

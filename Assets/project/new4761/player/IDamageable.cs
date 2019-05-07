@@ -3,6 +3,6 @@
 public interface IDamageable
 {
 
-    void TakeHit(float damage, Collision hit);
+    void TakeHit(float damage, Collider hit);
 
 }

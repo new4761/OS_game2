@@ -29,20 +29,19 @@ public class playertank : LivingEntity
     //private int curtDM ;
     //private int curtSpeed ;
     private bool curtSheild ;
-    private bool isDEAD;    
+    private bool isDEAD;
 
-  
+
+
     void Awake()
     {
     
         string playerName = "testplayer";
     
-        CmdGiveName(name);
 
     }
     void Update()
     {
-        
         m_TextComponent.text = playerName;
         if (!isLocalPlayer) return;
 
@@ -52,7 +51,6 @@ public class playertank : LivingEntity
         if ((moveHorizontal != 0 || moveVertical != 0 )&& (moveHorizontal == 0 || moveVertical == 0)) {
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
             transform.rotation = Quaternion.LookRotation(movement);
-
 
             transform.Translate(movement * movespeed * Time.deltaTime, Space.World);
 
@@ -64,8 +62,9 @@ public class playertank : LivingEntity
             CmdFire();
         }
     }
- 
 
+
+    
     // this is called on the server
     [Command]
     void CmdFire()
@@ -81,10 +80,6 @@ public class playertank : LivingEntity
     {
        // animator.SetTrigger("Shoot");
     }
-    [Command]
-    public void CmdGiveName(string s)
-    {
-        playerName = s;
-    }
+
 }
 

@@ -28,13 +28,15 @@ public class LivingEntity : NetworkBehaviour, IDamageable
         }
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
         dead = true;
         if (OnDeath != null)
         {
             OnDeath();
         }
-        GameObject.Destroy(gameObject);
+        NetworkServer.Destroy(gameObject);
     }
+ 
+  
 }

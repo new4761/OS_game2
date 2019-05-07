@@ -1,36 +1,48 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 using Mirror;
 public class LivingEntity : NetworkBehaviour, IDamageable
 {
 
     public float startingHealth;
     public bool canDestory;
-
-
-    [SyncVar]
     protected float health;
     protected bool dead;
+    protected float Shield;
 
     public event System.Action OnDeath;
 
     protected virtual void Start()
     {
         health = startingHealth;
+        Shield = 0;
     }
 
-    public void TakeHit(float damage, Collision hit)
+    public void TakeHit(float damage, Collider hit)
     {
-        if (canDestory==true) {
-            health -= damage;
-
-            if (health <= 0 && !dead)
-            {
-                Die();
-            }
+        if (Shield != 0)
+        {
+            Shield -= damage;
         }
+          else if (canDestory==true)
+          {                          
+             health -= damage;
+                if (health <= 0 && !dead)
+                {
+                    Die();
+                }
+          }
     }
-
+    public void uphealth()
+    {
+        health += 1;
+        Debug.Log(health);
+    }
+    public void addShield()
+    {
+        Shield += 2;
+        Debug.Log(Shield);
+    }
     protected virtual void Die()
     {
         dead = true;
@@ -38,19 +50,15 @@ public class LivingEntity : NetworkBehaviour, IDamageable
         {
             OnDeath();
         }
-        DestroySelf();
+        NetworkServer.Destroy(gameObject);
     }
     [Server]
-    void DestroySelf()
-    {
-        NetworkServer.Destroy(gameObject);
-    }
+    protected  virtual void Dropitem(int rditem) { }
 
-    // ServerCallback because we don't want a warning if OnTriggerEnter is
-    // called on the client
     [ServerCallback]
-    void OnTriggerEnter(Collider co)
+    protected virtual void OnTriggerEnter(Collider co)
     {
-        NetworkServer.Destroy(gameObject);
+        
+
     }
 }

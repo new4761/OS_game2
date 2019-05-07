@@ -1,37 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using Mirror;
 public class Mapcreate : NetworkBehaviour
 {
-    public Transform titlePrefab;
-    public Transform wallPrefab;
-    public Transform obj_dropItem;
-    public Transform obj_hard;
-    public Transform obj_easy;
+    public GameObject titlePrefab;
+    public GameObject wallPrefab;
+    public GameObject obj_dropItem;
+    public GameObject obj_hard;
+    public GameObject obj_easy;
     public int maxitem;
     public int itemrange;
+
+
+  //  public GameObject test;
 
     public Vector2 mapsize;
     [Range(0, 1)]
     public float outline;
 
-    [SyncVar]
-    Vector3 tilepostion;
+
 
     private bool isitem;
     private int coutitem;
     private int lastx = 0, lasty = 0;
-    public override void OnStartServer()
+    private void Start()
     {
-        base.OnStartServer();
-        GenMap();
+        Cmdgemap();   
     }
-    //private void Start()
-    //{
-    //    GenMap();   
-    //}
-  
+    //[Server]
     public void GenMap()
     {
       
@@ -78,56 +74,79 @@ public class Mapcreate : NetworkBehaviour
             for (int y = 0; y < mapsize.y; y++)
             {
 
-                tilepostion = new Vector3(-mapsize.x / 2 + 0.5f + x, 0, -mapsize.y / 2 + 0.5f + y);
+                Vector3 tilepostion = new Vector3(-mapsize.x / 2 + 0.5f + x, 0, -mapsize.y / 2 + 0.5f + y);
                 if (((x == 0 || y == 0) || (x == mapsize.x - 1 || y == mapsize.y - 1)) || ((x > 0 && y > 0) && (x % 2 == 0 && y % 2 == 0)))
                 {
-                    Transform newWalltile = Instantiate(wallPrefab, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
-                    newWalltile.localScale = Vector3.one * (1 - outline);
-                    newWalltile.parent = wallmapholder;
+
+                    GameObject newWalltile = Instantiate(wallPrefab, tilepostion + Vector3.up * 0.5f, Quaternion.identity);
+                    NetworkServer.Spawn(newWalltile);
+                    newWalltile.transform.parent = wallmapholder;
+                    //Transform newWalltile = Instantiate(wallPrefab, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
+
+                    //newWalltile.localScale = Vector3.one * (1 - outline);
+                    //newWalltile.parent = wallmapholder;
                 }
-                else if (((x > 3 && x < mapsize.x - 4) || (y > 3 && y < mapsize.y-4)) ||( (x>=2&&y>=2)&&( x <= mapsize.x-3 && y  <= mapsize.y - 3)))
+                else if (((x > 3 && x < mapsize.x - 4) || (y > 3 && y < mapsize.y - 4)) || ((x >= 2 && y >= 2) && (x <= mapsize.x - 3 && y <= mapsize.y - 3)))
                 {
                     isitem = (Random.value > 0.5f);
-                   
 
 
-                    if ((maxitem > coutitem && isitem)&&((x> lastx+ itemrange || y> lasty+ itemrange)))
+
+                    if ((maxitem > coutitem && isitem) && ((x > lastx + itemrange || y > lasty + itemrange)))
                     {
-                        Transform obj_drop_cretae = Instantiate(obj_dropItem, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
-                        obj_drop_cretae.localScale = Vector3.one * (1 - outline);
-                        obj_drop_cretae.parent = obj_drop_holder;
+                        GameObject obj_drop_cretae = Instantiate(obj_dropItem, tilepostion + Vector3.up * 0.5f, Quaternion.identity);
+                        NetworkServer.Spawn(obj_drop_cretae);
+                        obj_drop_cretae.transform.parent = obj_drop_holder;
+                        //Transform obj_drop_cretae = Instantiate(obj_dropItem, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
+                        //obj_drop_cretae.localScale = Vector3.one * (1 - outline);
+                        //obj_drop_cretae.parent = obj_drop_holder;
                         coutitem++;
                         lastx = x;
                         lasty = y;
                     }
                     else
                     {
-                        if (x%2==0&&((y > 3 && y < mapsize.y - 4)))
+                        if (x % 2 == 0 && ((y > 3 && y < mapsize.y - 4)))
                         {
-                            Transform obj_hard_create = Instantiate(obj_hard, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
-                            obj_hard_create.localScale = Vector3.one * (1 - outline);
-                            obj_hard_create.parent = obj_hard_holder;
+                            GameObject obj_hard_create = Instantiate(obj_hard, tilepostion + Vector3.up * 0.5f, Quaternion.identity);
+                            NetworkServer.Spawn(obj_hard_create);
+                            obj_hard_create.transform.parent = obj_hard_holder;
+
+                            //Transform obj_hard_create = Instantiate(obj_hard, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
+                            //obj_hard_create.localScale = Vector3.one * (1 - outline);
+                            //obj_hard_create.parent = obj_hard_holder;
 
                         }
                         else
                         {
-                            Transform obj_easy_create = Instantiate(obj_easy, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
-                            obj_easy_create.localScale = Vector3.one * (1 - outline);
-                            obj_easy_create.parent = obj_easy_holder;
+                            GameObject obj_easy_create = Instantiate(obj_easy, tilepostion + Vector3.up * 0.5f, Quaternion.identity);
+                            NetworkServer.Spawn(obj_easy_create);
+                            obj_easy_create.transform.parent = obj_easy_holder;
+                            //Transform obj_easy_create = Instantiate(obj_easy, tilepostion + Vector3.up * 0.5f, Quaternion.identity) as Transform;
+                            //obj_easy_create.localScale = Vector3.one * (1 - outline);
+                            //obj_easy_create.parent = obj_easy_holder;
                         }
                     }
 
                 }
 
-                Transform newtile = Instantiate(titlePrefab, tilepostion, Quaternion.Euler(Vector3.right * 90)) as Transform;
-               // Transform newWalltile = Instantiate(wallPrefab, tilepostion, Quaternion.identity) as Transform;
-                newtile.localScale = Vector3.one * (1 - outline);
-                newtile.parent = mapholder;
+                GameObject newtile = Instantiate(titlePrefab, tilepostion, Quaternion.Euler(Vector3.right * 90));
+                NetworkServer.Spawn(newtile);
+                newtile.transform.parent = mapholder;
+                //Transform newtile = Instantiate(titlePrefab, tilepostion, Quaternion.Euler(Vector3.right * 90)) as Transform;
+                //// Transform newWalltile = Instantiate(wallPrefab, tilepostion, Quaternion.identity) as Transform;
+                //newtile.localScale = Vector3.one * (1 - outline);
+                //newtile.parent = mapholder;
             }
 
            
         }
         Debug.Log(coutitem);
     }
-    
+    //server
+    [Command]
+    void Cmdgemap()
+    {
+        GenMap();
+    }
 }
