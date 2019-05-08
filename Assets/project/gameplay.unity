@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 291, y: 228}
+  m_AnchoredPosition: {x: 323, y: 333}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.9999999, y: 1.7639065}
 --- !u!114 &84761465
@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -15}
+  m_AnchoredPosition: {x: -6, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85193618
@@ -379,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -128}
+  m_AnchoredPosition: {x: 99, y: -128}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482808204
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   transport: {fileID: 1477819115}
   networkAddress: localhost
   maxConnections: 4
-  playerPrefab: {fileID: 7239628229646111086, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
+  playerPrefab: {fileID: 7381443828302294688, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -1233,11 +1233,14 @@ MonoBehaviour:
   player2Spawn: {fileID: 0}
   player3Spawn: {fileID: 0}
   player4Spawn: {fileID: 0}
-  player1obj: {fileID: 7239628229646111086, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
+  player1obj: {fileID: 7381443828302294688, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
     type: 3}
-  player2obj: {fileID: 0}
-  player3obj: {fileID: 0}
-  player4obj: {fileID: 0}
+  player2obj: {fileID: 4454969757533512952, guid: b811fa8358ee8c449bcf4a67caacd756,
+    type: 3}
+  player3obj: {fileID: 3743635544443792798, guid: 01d5dda32fc0a3f4c92fbb2917d2a7e5,
+    type: 3}
+  player4obj: {fileID: 333509348506719829, guid: 7e922a6e61d538648bf0c1c639808542,
+    type: 3}
   map: {fileID: 5893853963642241798, guid: 54b287fb780994b489fc8a2dab2df4c8, type: 3}
   playername: {fileID: 85193618}
   ipaddress: {fileID: 1638542917}
@@ -1295,7 +1298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -66}
+  m_AnchoredPosition: {x: -8, y: -66}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638542917
@@ -1438,7 +1441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122, y: -128}
+  m_AnchoredPosition: {x: -100, y: -128}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911436582
