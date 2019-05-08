@@ -1213,7 +1213,7 @@ MonoBehaviour:
   transport: {fileID: 1477819115}
   networkAddress: localhost
   maxConnections: 4
-  playerPrefab: {fileID: 7381443828302294688, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
+  playerPrefab: {fileID: 4111811970766969741, guid: b811fa8358ee8c449bcf4a67caacd756,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -1233,13 +1233,13 @@ MonoBehaviour:
   player2Spawn: {fileID: 0}
   player3Spawn: {fileID: 0}
   player4Spawn: {fileID: 0}
-  player1obj: {fileID: 7381443828302294688, guid: 0eb5f04b45c24db42b9bf8e41ec3920b,
+  player1obj: {fileID: 4111811970766969741, guid: b811fa8358ee8c449bcf4a67caacd756,
     type: 3}
-  player2obj: {fileID: 4454969757533512952, guid: b811fa8358ee8c449bcf4a67caacd756,
+  player2obj: {fileID: 2822673218915511250, guid: 8f45726ee866b744db72150293ab98a1,
     type: 3}
-  player3obj: {fileID: 3743635544443792798, guid: 01d5dda32fc0a3f4c92fbb2917d2a7e5,
+  player3obj: {fileID: 2573702686993726138, guid: f964c7d3e54e77647a0a8ea1cb275fc1,
     type: 3}
-  player4obj: {fileID: 333509348506719829, guid: 7e922a6e61d538648bf0c1c639808542,
+  player4obj: {fileID: 8819315115068131906, guid: 0a2997220da74184cb1338ec3832f069,
     type: 3}
   map: {fileID: 5893853963642241798, guid: 54b287fb780994b489fc8a2dab2df4c8, type: 3}
   playername: {fileID: 85193618}
